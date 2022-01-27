@@ -1,0 +1,40 @@
+body{
+
+    background-color: #262424 ;
+    color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.im{
+
+height: 20rem ;
+width: 14rem;
+}
+.car{
+    background-color: #2b2b2b ;
+    color: white !important;
+    padding-right: 0px !important;
+
+
+
+}
+.car1{
+    padding:20px 0;
+    border: #2b2b2b;
+    background-color:#2b2b2b ;
+    color: white;
+}
+.here{
+    padding-top: 30px;
+}
+.unlike{
+    float: right;
+    margin-right: 30%;
+    filter: grayscale(100%);
+
+}
+.like{
+    float: right;
+    margin-right: 30%;
+
+}
