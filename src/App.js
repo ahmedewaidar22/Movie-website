@@ -9,12 +9,22 @@ import Show from './pages/Show';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
 import Favorite from './pages/favorite';
-function App() {
+import { useState } from 'react';
+import React from "react";
 
+// import { Langcontext } from './context/lang';
+export const Langcontext=React.createContext()
+
+function App() {
+const[langcont,Setlangcontext]=useState("ENGLISH")
+console.log(langcont,"langcont app")
   return (
+    
  <>
 
+<div dir={langcont==="ENGLISH"?"ltr":"rtl"}>
  <Router>
+<Langcontext.Provider value={{langcont,Setlangcontext}}>
  <NavBar/>
    <Switch>
  <Route path="/" component={Home} exact />
@@ -25,7 +35,9 @@ function App() {
  <Route path="/favorite" component={Favorite} exact />
  
  </Switch>
+ </Langcontext.Provider>
  </Router>
+ </div>
  <Footer/>
  
  </>

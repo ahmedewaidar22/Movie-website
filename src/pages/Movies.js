@@ -5,27 +5,17 @@ import './Movies.css';
 import {Link,} from "react-router-dom"
 import like from './like.png';
 import {useDispatch, useSelector } from "react-redux";
-import{removeToFavorites,addToFavorites} from "../redux/action"
+import{removeToFavorites,addToFavorites,getMovies} from "../redux/action"
 
 function Movies() {
 
 const dispatch=useDispatch()
 const state=useSelector(state=>state)
 console.log(state,"state") 
-
-const [users,setUsers]=useState([])
+const movies=useSelector(state=>state.movies.movie)
+// const [users]=useState([])
 useEffect(()=>{
-axios
-.get('https://api.themoviedb.org/3/movie/popular?api_key=9e6e68da10912cb208a480beaf066249')
-.then((res)=>{
-
-  console.log(res.data.results  )
-  setUsers(res.data.results)
-
-})
-.catch((err)=>{
-  console.log(err)
-})
+  dispatch(getMovies())
 
 
 },[])
@@ -64,7 +54,7 @@ if(img.classList.contains("unlike")){
   </div>
   <Row xs={2}   md={3} lg={6} className="here">
 
-{users.map((user)=>
+{movies.map((user)=>
 {
 return(
 

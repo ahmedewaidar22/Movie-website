@@ -1,6 +1,7 @@
-import { createStore } from "redux";
-import{favoritesReducer}from "./reducers"
+import { applyMiddleware, createStore } from "redux";
+import AllReducers from "./AllReducers";
+import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 const store = createStore(
-    favoritesReducer,composeWithDevTools());
+    AllReducers,composeWithDevTools(applyMiddleware(thunk)));
 export default store;

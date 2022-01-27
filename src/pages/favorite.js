@@ -7,7 +7,7 @@ import like from './like.png';
 import {useDispatch, useSelector } from "react-redux";
 import{removeToFavorites,addToFavorites} from "../redux/action"
 function Favorite() {
-  const favorite=useSelector(state=>state.fav)
+  const favorite=useSelector(state=>state.fav.fav)
   const dispatch=useDispatch()
 
   const check=(e,user)=>{
